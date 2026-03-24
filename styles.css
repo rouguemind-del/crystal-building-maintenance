@@ -684,8 +684,10 @@ section {
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: var(--spacing-3xl);
-    align-items: start;
+    gap: var(--spacing-2xl);
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .contact-info {
@@ -808,9 +810,10 @@ section {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto var(--spacing-xl) auto;
 }
 
 .footer-section h4 {
@@ -961,6 +964,10 @@ section {
     .contact-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
     .form-row {
