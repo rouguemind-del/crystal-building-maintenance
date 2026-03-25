@@ -139,7 +139,7 @@ a:hover {
 }
 
 .navbar {
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
 }
 
 .navbar .container {
@@ -149,17 +149,21 @@ a:hover {
     position: relative;
     width: 100%;
     min-height: 60px;
+    gap: var(--spacing-lg);
 }
 
 .nav-brand {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    flex: 0 0 auto;
 }
 
 .logo {
-    height: 90px;
+    height: 60px;
     width: auto;
+    max-width: 200px;
+    object-fit: contain;
 }
 
 .brand-name {
@@ -171,13 +175,12 @@ a:hover {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-md);
     align-items: center;
     margin: 0;
     padding: 0;
-    flex: 1;
+    flex: 1 1 auto;
     justify-content: center;
-    max-width: 600px;
 }
 
 /* Desktop Navigation */
@@ -188,6 +191,23 @@ a:hover {
     
     .hamburger {
         display: none !important;
+    }
+    
+    .navbar .container {
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+}
+
+/* Large Desktop Navigation */
+@media (min-width: 1200px) {
+    .nav-links {
+        gap: var(--spacing-lg);
+    }
+    
+    .nav-links a {
+        font-size: 1rem;
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 }
 
@@ -215,9 +235,11 @@ a:hover {
 .nav-links a {
     font-weight: 500;
     color: var(--gray-700);
-    padding: var(--spacing-sm) 0;
+    padding: var(--spacing-xs) var(--spacing-sm);
     transition: var(--transition);
     text-decoration: none;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -227,15 +249,16 @@ a:hover {
 .nav-contact {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     flex-shrink: 0;
     white-space: nowrap;
+    flex: 0 0 auto;
 }
 
 .phone-number {
     font-weight: 600;
     color: var(--gray-900);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .phone-number:hover {
@@ -246,7 +269,7 @@ a:hover {
 .btn-primary {
     background: var(--primary-blue);
     color: var(--white);
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-sm);
     font-weight: 600;
     text-decoration: none;
@@ -254,6 +277,8 @@ a:hover {
     transition: var(--transition);
     border: none;
     cursor: pointer;
+    font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -968,8 +993,13 @@ section {
     }
     
     .nav-brand {
-        flex: 0 1 auto !important;
-        max-width: 70% !important;
+        flex: 0 0 auto !important;
+        max-width: 60% !important;
+    }
+    
+    .nav-brand .logo {
+        max-height: 50px !important;
+        width: auto !important;
     }
     
     .hamburger {
