@@ -473,6 +473,55 @@ a:hover {
     flex-wrap: wrap;
 }
 
+/* Hero CTA Buttons - Professional boxed style */
+.cta-primary {
+    background: #059669;
+    color: #ffffff !important;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: 2px solid #059669;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 1.1rem;
+    text-align: center;
+    min-width: 200px;
+}
+
+.cta-primary:hover {
+    background: #047857;
+    border-color: #047857;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: #ffffff !important;
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.95);
+    color: #059669 !important;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 1.1rem;
+    text-align: center;
+    min-width: 200px;
+}
+
+.cta-secondary:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: #047857 !important;
+}
+
 /* Section Styles */
 section {
     padding: var(--spacing-3xl) 0;
@@ -1086,6 +1135,30 @@ section {
     .hero-cta {
         flex-direction: column;
         align-items: center;
+        gap: var(--spacing-lg);
+        padding: 0 var(--spacing-md);
+    }
+    
+    /* Mobile CTA button styles */
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        max-width: 280px;
+        padding: 18px 28px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cta-primary {
+        background: #059669;
+        border: 3px solid #059669;
+    }
+    
+    .cta-secondary {
+        background: #ffffff;
+        color: #059669 !important;
+        border: 3px solid #ffffff;
     }
     
     .services-grid,
@@ -1172,6 +1245,21 @@ section {
     
     .hero-content > p {
         font-size: 1rem;
+    }
+    
+    /* CTA buttons on small phones */
+    .hero-cta {
+        width: 100%;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        max-width: 260px;
+        padding: 16px 24px;
+        font-size: 1rem;
+        border-radius: 10px;
     }
     
     /* Trust badges single column on very small screens */
