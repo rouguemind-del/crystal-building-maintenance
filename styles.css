@@ -148,6 +148,7 @@ a:hover {
     justify-content: space-between;
     position: relative;
     width: 100%;
+    min-height: 60px;
 }
 
 .nav-brand {
@@ -179,13 +180,30 @@ a:hover {
     max-width: 600px;
 }
 
-/* Ensure nav-links are visible on desktop */
-@media (min-width: 769px) {
+/* Desktop Navigation */
+@media (min-width: 992px) {
     .nav-links {
         display: flex !important;
     }
     
     .hamburger {
+        display: none !important;
+    }
+}
+
+/* Tablet and Mobile Navigation */
+@media (max-width: 991px) {
+    .hamburger {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .nav-links {
+        display: none !important;
+    }
+    
+    .nav-contact {
         display: none !important;
     }
 }
@@ -260,8 +278,8 @@ a:hover {
 .hamburger {
     display: none;
     background: #059669;
-    border: none;
-    font-size: 1.8rem;
+    border: 2px solid #047857;
+    font-size: 24px;
     cursor: pointer;
     padding: 8px 12px;
     color: white;
@@ -270,9 +288,10 @@ a:hover {
     min-width: 45px;
     min-height: 45px;
     position: relative;
-    z-index: 1001;
+    z-index: 10001;
     line-height: 1;
     font-weight: bold;
+    margin-left: 10px;
 }
 
 .hamburger:hover {
@@ -882,7 +901,7 @@ section {
         grid-template-columns: 1fr;
     }
     
-    /* Mobile Navigation - Critical Fix */
+    /* Mobile Navigation - Force Hamburger Visibility */
     .nav-contact {
         display: none !important;
     }
@@ -891,6 +910,13 @@ section {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+        position: absolute !important;
+        right: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        background: #059669 !important;
+        color: white !important;
+        font-size: 28px !important;
     }
     
     .nav-links {
