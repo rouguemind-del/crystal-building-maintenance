@@ -299,6 +299,29 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Emergency Hamburger Override - Force Visibility */
+@media screen and (max-width: 991px) {
+    button.hamburger {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        right: 20px !important;
+        top: 20px !important;
+        z-index: 99999 !important;
+        background-color: #059669 !important;
+        color: white !important;
+        border: 2px solid #fff !important;
+        font-size: 30px !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 !important;
+        cursor: pointer !important;
+        border-radius: 5px !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+    }
+}
+
 /* Hero Section - Background image defined later in CSS */
 
 .hero-content {
