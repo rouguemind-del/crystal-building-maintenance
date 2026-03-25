@@ -968,13 +968,18 @@ section {
 
 /* Mobile & Tablet Responsive */
 @media (max-width: 768px) {
-    /* Logo size adjustment for mobile */
+    /* Logo size adjustment for mobile - increased for better visibility */
     .logo {
-        height: 50px;
+        height: 70px !important;
     }
     
     .navbar {
-        padding: var(--spacing-md) 0;
+        padding: var(--spacing-sm) 0;
+        background: white !important;
+    }
+    
+    .header {
+        background: white !important;
     }
     
     /* Layout adjustments */
@@ -994,12 +999,15 @@ section {
     
     .nav-brand {
         flex: 0 0 auto !important;
-        max-width: 60% !important;
+        max-width: 70% !important;
+        padding: 10px 0;
     }
     
     .nav-brand .logo {
-        max-height: 50px !important;
+        max-height: 70px !important;
+        height: 70px !important;
         width: auto !important;
+        object-fit: contain;
     }
     
     .hamburger {
@@ -1126,6 +1134,38 @@ section {
 }
 
 @media (max-width: 480px) {
+    /* Enhanced mobile header for small screens */
+    .navbar {
+        padding: 8px 0;
+    }
+    
+    .nav-brand .logo {
+        height: 60px !important;
+        max-height: 60px !important;
+    }
+    
+    /* Adjust hamburger position for smaller screens */
+    .hamburger {
+        right: 15px !important;
+        top: 15px !important;
+        width: 36px !important;
+        height: 36px !important;
+    }
+    
+    /* Hero adjustments for small screens */
+    .hero {
+        padding: 80px 0 var(--spacing-2xl);
+        min-height: 350px;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content > p {
+        font-size: 1rem;
+    }
+    
     /* Trust badges single column on very small screens */
     .badges-grid {
         grid-template-columns: 1fr;
@@ -1243,7 +1283,7 @@ section {
         z-index: 1001 !important;
     }
     
-    /* Mobile hero background fix - disable fixed attachment */
+    /* Mobile hero background fix - disable fixed attachment and ensure image shows */
     .hero,
     .hero.west-palm-beach,
     .hero.boca-raton,
@@ -1251,7 +1291,18 @@ section {
     .hero.boynton-beach,
     .hero.jupiter,
     .hero.wellington {
-        background-attachment: scroll;
+        background-attachment: scroll !important;
+        background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(5, 150, 105, 0.6)), 
+                          url('cleaning-hero-image.jpg') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        min-height: 400px;
+    }
+    
+    /* Reduce overlay opacity on mobile for better image visibility */
+    .hero::before {
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.5), rgba(5, 150, 105, 0.3)) !important;
     }
 }
 
