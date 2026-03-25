@@ -405,6 +405,23 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Fallback Mobile Menu Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.classList.toggle('open');
+                navLinks.classList.toggle('active');
+                console.log('Hamburger clicked - menu toggled');
+            });
+        }
+    });
+    </script>
     <!-- Floating Call Button -->
     <a href="tel:5616845652" class="floating-call-btn" aria-label="Call Now"><span>Call Now</span></a>
 </body>
