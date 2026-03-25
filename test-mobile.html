@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test - Crystal Building Maintenance</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial; }
+        h1 { color: #059669; }
+        .test-info { 
+            background: #f0f0f0; 
+            padding: 20px; 
+            border-radius: 5px; 
+            margin: 20px 0;
+        }
+        
+        /* Test Hamburger Button */
+        .test-hamburger {
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 99999;
+            background: #059669;
+            color: white;
+            border: 2px solid white;
+            font-size: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .test-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: white;
+            border: 2px solid #059669;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 99998;
+        }
+        
+        .test-menu.open {
+            display: block;
+        }
+        
+        .test-menu a {
+            display: block;
+            padding: 10px;
+            color: #059669;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .viewport-info {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #059669;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Menu Test Page</h1>
+    
+    <div class="test-info">
+        <h2>Testing Hamburger Menu Visibility</h2>
+        <p>This page tests if the hamburger menu button is visible and functional.</p>
+        <p><strong>You should see:</strong></p>
+        <ul>
+            <li>A green hamburger button (☰) in the top-right corner</li>
+            <li>When clicked, it should open a menu</li>
+            <li>Your viewport width shown at bottom-left</li>
+        </ul>
+    </div>
+    
+    <!-- Test Hamburger Button -->
+    <button class="test-hamburger" onclick="toggleMenu()">☰</button>
+    
+    <!-- Test Menu -->
+    <div class="test-menu" id="testMenu">
+        <a href="index.html">Home</a>
+        <a href="commercial-cleaning.html">Commercial Cleaning</a>
+        <a href="medical-facility-cleaning.html">Medical Facilities</a>
+        <a href="condo-hoa-cleaning.html">Condo/HOA</a>
+        <a href="#contact">Contact</a>
+    </div>
+    
+    <!-- Viewport Info -->
+    <div class="viewport-info" id="viewportInfo">
+        Width: <span id="width"></span>px
+    </div>
+    
+    <div class="test-info">
+        <h3>Actual Site Navigation Test</h3>
+        <p>Below is an iframe showing the actual homepage. Check if the hamburger appears there:</p>
+        <iframe src="index.html" style="width: 100%; height: 500px; border: 2px solid #059669;"></iframe>
+    </div>
+    
+    <script>
+        // Test menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('testMenu');
+            menu.classList.toggle('open');
+        }
+        
+        // Show viewport width
+        function updateViewport() {
+            document.getElementById('width').textContent = window.innerWidth;
+        }
+        
+        updateViewport();
+        window.addEventListener('resize', updateViewport);
+        
+        // Debug info
+        console.log('Test page loaded');
+        console.log('Viewport width:', window.innerWidth);
+        console.log('User agent:', navigator.userAgent);
+    </script>
+</body>
+</html>
