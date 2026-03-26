@@ -139,7 +139,7 @@ a:hover {
 }
 
 .navbar {
-    padding: var(--spacing-md) 0;
+    padding: 0.5rem 0; /* Reduced padding to make header more compact */
 }
 
 .navbar .container {
@@ -148,8 +148,9 @@ a:hover {
     justify-content: space-between;
     position: relative;
     width: 100%;
-    min-height: 60px;
-    gap: var(--spacing-lg);
+    min-height: 50px; /* Reduced from 60px */
+    gap: 1rem; /* Reduced gap */
+    padding: 0 1rem; /* Added horizontal padding */
 }
 
 .nav-brand {
@@ -160,9 +161,9 @@ a:hover {
 }
 
 .logo {
-    height: 90px;
+    height: 120px; /* Increased from 90px for better visibility */
     width: auto;
-    max-width: 250px;
+    max-width: 300px; /* Increased from 250px */
     object-fit: contain;
 }
 
@@ -1121,7 +1122,21 @@ section {
 @media (max-width: 768px) {
     /* Mobile layout adjustments */
     .hero {
-        padding: 180px 0 var(--spacing-2xl);
+        padding: 120px 0 var(--spacing-2xl); /* Reduced from 180px */
+    }
+    
+    /* Compact header for mobile/tablet */
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
+    .navbar .container {
+        min-height: auto;
+    }
+    
+    .logo {
+        height: 80px; /* Appropriate size for mobile/tablet */
+        max-width: 200px;
     }
     
     /* Trust badges mobile - keep 2 columns */
@@ -1210,32 +1225,32 @@ section {
 }
 
 @media (max-width: 480px) {
-    /* Enhanced mobile header for small screens */
+    /* Compact mobile header for small screens */
     .navbar {
-        padding: 12px 0;
-        min-height: 140px;
+        padding: 8px 0; /* Reduced padding */
+        min-height: auto; /* Remove minimum height constraint */
     }
     
     .header {
-        min-height: 140px;
+        min-height: auto; /* Remove minimum height constraint */
     }
     
     .nav-brand .logo {
-        height: 110px !important;
-        max-height: 110px !important;
+        height: 70px !important; /* Smaller on mobile but still visible */
+        max-height: 70px !important;
     }
     
-    /* Adjust hamburger position for smaller screens */
+    /* Adjust hamburger position for compact header */
     .hamburger {
         right: 15px !important;
-        top: 50px !important;
+        top: 15px !important; /* Move up to align with smaller header */
         width: 36px !important;
         height: 36px !important;
     }
     
     /* Hero adjustments for small screens */
     .hero {
-        padding: 160px 0 var(--spacing-2xl);
+        padding: 100px 0 var(--spacing-2xl); /* Reduced top padding */
         min-height: 350px;
     }
     
