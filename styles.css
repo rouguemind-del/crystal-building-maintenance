@@ -139,7 +139,7 @@ a:hover {
 }
 
 .navbar {
-    padding: 0.5rem 0; /* Reduced padding to make header more compact */
+    padding: 0.25rem 0; /* VERY compact header */
 }
 
 .navbar .container {
@@ -148,9 +148,9 @@ a:hover {
     justify-content: space-between;
     position: relative;
     width: 100%;
-    min-height: 50px; /* Reduced from 60px */
-    gap: 1rem; /* Reduced gap */
-    padding: 0 1rem; /* Added horizontal padding */
+    min-height: auto; /* Let it size naturally based on content */
+    gap: 0.5rem; /* Minimal gap */
+    padding: 0 1rem; /* Horizontal padding only */
 }
 
 .nav-brand {
@@ -161,9 +161,9 @@ a:hover {
 }
 
 .logo {
-    height: 120px; /* Increased from 90px for better visibility */
+    height: 150px; /* MUCH larger for visibility */
     width: auto;
-    max-width: 300px; /* Increased from 250px */
+    max-width: 400px; /* Allow wider logo */
     object-fit: contain;
 }
 
@@ -1122,21 +1122,22 @@ section {
 @media (max-width: 768px) {
     /* Mobile layout adjustments */
     .hero {
-        padding: 120px 0 var(--spacing-2xl); /* Reduced from 180px */
+        padding: 100px 0 var(--spacing-2xl); /* Much less top padding */
     }
     
-    /* Compact header for mobile/tablet */
+    /* VERY compact header for mobile/tablet */
     .navbar {
-        padding: 0.5rem 0;
+        padding: 0.2rem 0 !important; /* Minimal padding */
     }
     
     .navbar .container {
-        min-height: auto;
+        min-height: auto !important;
+        padding: 0 0.5rem !important; /* Less horizontal padding too */
     }
     
     .logo {
-        height: 80px; /* Appropriate size for mobile/tablet */
-        max-width: 200px;
+        height: 100px !important; /* Still quite large on mobile */
+        max-width: 250px !important;
     }
     
     /* Trust badges mobile - keep 2 columns */
@@ -1225,32 +1226,32 @@ section {
 }
 
 @media (max-width: 480px) {
-    /* Compact mobile header for small screens */
+    /* Ultra-compact mobile header for small screens */
     .navbar {
-        padding: 8px 0; /* Reduced padding */
-        min-height: auto; /* Remove minimum height constraint */
+        padding: 0.2rem 0 !important; /* Minimal padding */
+        min-height: auto !important;
     }
     
     .header {
-        min-height: auto; /* Remove minimum height constraint */
+        min-height: auto !important;
     }
     
     .nav-brand .logo {
-        height: 70px !important; /* Smaller on mobile but still visible */
-        max-height: 70px !important;
+        height: 90px !important; /* Still reasonably large on small screens */
+        max-height: 90px !important;
     }
     
-    /* Adjust hamburger position for compact header */
+    /* Adjust hamburger position for ultra-compact header */
     .hamburger {
-        right: 15px !important;
-        top: 15px !important; /* Move up to align with smaller header */
+        right: 10px !important;
+        top: 10px !important; /* Very top corner */
         width: 36px !important;
         height: 36px !important;
     }
     
     /* Hero adjustments for small screens */
     .hero {
-        padding: 100px 0 var(--spacing-2xl); /* Reduced top padding */
+        padding: 80px 0 var(--spacing-2xl) !important; /* Much less top padding */
         min-height: 350px;
     }
     
@@ -1989,3 +1990,54 @@ section {
     }
 }
 /* CSS fix deployed Tue Mar 24 10:48:19 EDT 2026 */
+
+
+/* GLOBAL HEADER OVERRIDES - Apply to ALL pages */
+.header {
+    max-height: none !important; /* Remove any height constraints */
+}
+
+.navbar {
+    padding: 0.25rem 0 !important; /* Force compact on all pages */
+}
+
+.navbar .container {
+    min-height: auto !important; /* Natural height on all pages */
+    max-height: none !important;
+    padding: 0 1rem !important;
+}
+
+.logo {
+    height: 150px !important; /* Force large logo everywhere */
+    min-height: 80px !important; /* Never smaller than this */
+    width: auto !important;
+    max-width: 400px !important;
+}
+
+/* Mobile overrides for ALL pages */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.2rem 0 !important;
+    }
+    
+    .logo {
+        height: 100px !important;
+        max-width: 250px !important;
+    }
+    
+    /* Reduce top padding on all hero/main sections */
+    .hero, main, .main-content {
+        padding-top: 80px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 90px !important;
+        max-width: 200px !important;
+    }
+    
+    .hero, main, .main-content {
+        padding-top: 70px !important;
+    }
+}
