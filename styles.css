@@ -1018,14 +1018,10 @@ section {
 
 /* Mobile & Tablet Responsive */
 @media (max-width: 768px) {
-    /* Logo size adjustment for mobile - extra large for maximum visibility */
-    .logo {
-        height: 130px !important;
-        max-height: 130px !important;
-    }
+    /* Logo size adjustment for mobile - REMOVED, using global overrides instead */
     
     .navbar {
-        padding: 15px 0;
+        padding: 0.2rem 0 !important; /* Ultra compact */
         background: white !important;
         min-height: 160px;
     }
@@ -1057,8 +1053,7 @@ section {
     }
     
     .nav-brand .logo {
-        max-height: 130px !important;
-        height: 130px !important;
+        /* Removed specific height - using global overrides */
         width: auto !important;
         object-fit: contain;
     }
@@ -1992,26 +1987,36 @@ section {
 /* CSS fix deployed Tue Mar 24 10:48:19 EDT 2026 */
 
 
-/* GLOBAL HEADER OVERRIDES - Apply to ALL pages */
+/* GLOBAL HEADER OVERRIDES - Apply to ALL pages - MAXIMUM PRIORITY */
 .header {
-    max-height: none !important; /* Remove any height constraints */
+    max-height: none !important;
+    min-height: auto !important;
 }
 
 .navbar {
-    padding: 0.25rem 0 !important; /* Force compact on all pages */
+    padding: 0.25rem 0 !important; /* Ultra compact */
+    min-height: auto !important;
+    max-height: none !important;
 }
 
 .navbar .container {
-    min-height: auto !important; /* Natural height on all pages */
+    min-height: auto !important;
     max-height: none !important;
     padding: 0 1rem !important;
 }
 
-.logo {
-    height: 150px !important; /* Force large logo everywhere */
-    min-height: 80px !important; /* Never smaller than this */
+/* Force logo size with maximum specificity */
+.logo,
+.nav-brand .logo,
+.navbar .logo,
+.header .logo,
+img.logo {
+    height: 150px !important; /* Desktop size */
+    min-height: 150px !important;
+    max-height: 150px !important;
     width: auto !important;
     max-width: 400px !important;
+    object-fit: contain !important;
 }
 
 /* Mobile overrides for ALL pages */
