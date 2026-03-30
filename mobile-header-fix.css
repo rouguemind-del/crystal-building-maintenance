@@ -1,0 +1,84 @@
+/* EMERGENCY MOBILE HEADER FIX - March 29, 2026 */
+/* This file contains aggressive mobile header fixes to reduce space */
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+    /* Reduce header/navbar height dramatically */
+    .header,
+    .navbar {
+        max-height: 60px !important;
+        min-height: auto !important;
+        padding: 0 !important;
+    }
+    
+    .navbar .container {
+        padding: 0.25rem 1rem !important;
+        max-height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+    
+    /* Much smaller logo on mobile */
+    .logo,
+    .nav-brand .logo,
+    .navbar .logo,
+    .header .logo,
+    img.logo,
+    .nav-brand img {
+        height: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+        width: auto !important;
+        object-fit: contain !important;
+    }
+    
+    /* Reduce hero section top padding */
+    .hero,
+    .hero-service-page,
+    main,
+    .main-content,
+    section:first-child {
+        padding-top: 70px !important; /* Just enough for fixed header */
+    }
+    
+    /* Hamburger menu adjustments */
+    .hamburger {
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+
+/* Even more aggressive for small phones */
+@media (max-width: 480px) {
+    .header,
+    .navbar {
+        max-height: 50px !important;
+    }
+    
+    .navbar .container {
+        max-height: 50px !important;
+        padding: 0.2rem 0.5rem !important;
+    }
+    
+    /* Tiny logo for small screens */
+    .logo,
+    .nav-brand .logo,
+    .navbar .logo,
+    .header .logo,
+    img.logo,
+    .nav-brand img {
+        height: 35px !important;
+        min-height: 35px !important;
+        max-height: 35px !important;
+    }
+    
+    /* Adjust content padding */
+    .hero,
+    .hero-service-page,
+    main,
+    .main-content,
+    section:first-child {
+        padding-top: 60px !important;
+    }
+}
