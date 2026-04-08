@@ -261,4 +261,30 @@
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
+    
+    <!-- Additional Pages -->
+    <url>
+        <loc>https://www.crystalbuildingmaintenance.com/about.html</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.crystalbuildingmaintenance.com/contact.html</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.crystalbuildingmaintenance.com/request-quote.html</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.crystalbuildingmaintenance.com/blog.html</loc>
+        <lastmod>2026-04-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
 </urlset>
