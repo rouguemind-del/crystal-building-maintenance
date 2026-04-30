@@ -2220,4 +2220,68 @@ main {
     .info-table .info-value {
         color: #e2e8f0;
     }
+}/* Enhanced Service Areas styling for sitemap */
+.featured-areas {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 12px;
+    border: 1px solid #bfdbfe;
+}
+
+.featured-areas h3 {
+    color: #1e40af;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.areas-list-clean {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.areas-list-clean li {
+    padding: 0.75rem 1rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #059669;
+    transition: all 0.3s ease;
+}
+
+.areas-list-clean li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.areas-list-clean li a {
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.areas-list-clean li a::before {
+    content: "📍";
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.areas-list-clean li a:hover {
+    color: #059669;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .areas-list-clean {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-areas {
+        padding: 1.5rem;
+    }
 }
