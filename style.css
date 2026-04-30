@@ -1068,4 +1068,80 @@ main {
     .blog-section {
         padding-top: 140px !important;
     }
+}/* Clean Company Info Table Styles */
+.company-info-table {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.info-table tr {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table td {
+    padding: 1rem 1.5rem;
+}
+
+.info-table .info-label {
+    font-weight: 600;
+    color: #334155;
+    width: 35%;
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+}
+
+.info-table .info-value {
+    color: #475569;
+    width: 65%;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .info-table .info-label {
+        width: 40%;
+    }
+    
+    .info-table .info-value {
+        width: 60%;
+    }
+    
+    .info-table td {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Dark mode support if needed */
+@media (prefers-color-scheme: dark) {
+    .info-table {
+        background: #1e293b;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .info-table tr {
+        border-bottom: 1px solid #334155;
+    }
+    
+    .info-table .info-label {
+        color: #cbd5e1;
+        background: #0f172a;
+        border-right: 1px solid #334155;
+    }
+    
+    .info-table .info-value {
+        color: #e2e8f0;
+    }
 }
