@@ -1208,4 +1208,65 @@ main {
     .featured-areas {
         padding: 1.5rem;
     }
+}/* Compact Services List for Sitemap */
+.services-list-compact {
+    padding: 3rem 0;
+    background: #f8fafc;
+}
+
+.services-list-compact h2 {
+    color: #1e293b;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.services-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+.service-list a {
+    color: #334155;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.service-list a::before {
+    content: "→";
+    margin-right: 0.5rem;
+    color: #059669;
+    font-weight: bold;
+}
+
+.service-list a:hover {
+    color: #059669;
+    transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+    .services-columns {
+        grid-template-columns: 1fr;
+    }
 }
