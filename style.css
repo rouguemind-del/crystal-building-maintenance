@@ -57,7 +57,7 @@ body {
 .hero {
     background: linear-gradient(135deg, #1e40af 0%, #059669 100%);
     color: white;
-    padding: 4rem 0;
+    padding: 120px 0 4rem 0; /* Added top padding for fixed header */
     text-align: center;
 }
 
@@ -969,5 +969,36 @@ section {
     
     .faq-item {
         padding: 1.5rem;
+    }
+}/* Fix for header overlap issue */
+/* Add padding-top to hero sections to account for fixed header */
+
+.hero {
+    padding-top: 120px !important; /* Increased from 4rem to account for fixed header */
+    padding-bottom: 4rem;
+}
+
+/* Also fix for any other sections that might be affected */
+body {
+    padding-top: 100px; /* Global fix for fixed header */
+}
+
+/* Ensure sections don't have their content hidden */
+section:first-of-type:not(.hero) {
+    padding-top: 120px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px !important;
+    }
+    
+    body {
+        padding-top: 80px;
+    }
+    
+    section:first-of-type:not(.hero) {
+        padding-top: 100px;
     }
 }

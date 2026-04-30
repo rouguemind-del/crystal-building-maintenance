@@ -1,0 +1,32 @@
+/* Fix for header overlap issue */
+/* Add padding-top to hero sections to account for fixed header */
+
+.hero {
+    padding-top: 120px !important; /* Increased from 4rem to account for fixed header */
+    padding-bottom: 4rem;
+}
+
+/* Also fix for any other sections that might be affected */
+body {
+    padding-top: 100px; /* Global fix for fixed header */
+}
+
+/* Ensure sections don't have their content hidden */
+section:first-of-type:not(.hero) {
+    padding-top: 120px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px !important;
+    }
+    
+    body {
+        padding-top: 80px;
+    }
+    
+    section:first-of-type:not(.hero) {
+        padding-top: 100px;
+    }
+}
