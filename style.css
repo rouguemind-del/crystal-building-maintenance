@@ -57,7 +57,7 @@ body {
 .hero {
     background: linear-gradient(135deg, #1e40af 0%, #059669 100%);
     color: white;
-    padding: 120px 0 4rem 0; /* Added top padding for fixed header */
+    padding: 160px 0 4rem 0; /* Increased top padding - header is always there, just transparent initially */
     text-align: center;
 }
 
@@ -974,31 +974,98 @@ section {
 /* Add padding-top to hero sections to account for fixed header */
 
 .hero {
-    padding-top: 120px !important; /* Increased from 4rem to account for fixed header */
+    padding-top: 160px !important; /* Increased from 4rem to account for fixed header */
     padding-bottom: 4rem;
 }
 
 /* Also fix for any other sections that might be affected */
 body {
-    padding-top: 100px; /* Global fix for fixed header */
+    padding-top: 140px; /* Global fix for fixed header */
 }
 
 /* Ensure sections don't have their content hidden */
 section:first-of-type:not(.hero) {
-    padding-top: 120px;
+    padding-top: 160px;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .hero {
-        padding-top: 100px !important;
+        padding-top: 140px !important;
     }
     
     body {
-        padding-top: 80px;
+        padding-top: 120px;
     }
     
     section:first-of-type:not(.hero) {
-        padding-top: 100px;
+        padding-top: 140px;
+    }
+}/* COMPLETE FIX for header overlap issue */
+/* The header appears transparent initially but is always covering content */
+
+/* Main hero sections - increase padding significantly */
+.hero {
+    padding-top: 160px !important; /* Increased to ensure content is below header */
+    padding-bottom: 4rem;
+}
+
+/* Service page heroes */
+.hero-service-page {
+    padding-top: 160px !important;
+}
+
+/* Any section that might be at the top of a page */
+section:first-child {
+    padding-top: 160px !important;
+}
+
+/* Global body padding as fallback */
+body {
+    padding-top: 140px !important;
+}
+
+/* Page content wrapper if it exists */
+.page-content,
+.main-content,
+main {
+    padding-top: 140px !important;
+}
+
+/* Specific service page adjustments */
+.service-hero {
+    padding-top: 160px !important;
+}
+
+/* About, Contact, Blog pages */
+.about-hero,
+.contact-section,
+.blog-section {
+    padding-top: 160px !important;
+}
+
+/* Mobile adjustments - header is usually shorter on mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 140px !important;
+    }
+    
+    .hero-service-page {
+        padding-top: 140px !important;
+    }
+    
+    body {
+        padding-top: 160px !important;
+    }
+    
+    section:first-child {
+        padding-top: 140px !important;
+    }
+    
+    .service-hero,
+    .about-hero,
+    .contact-section,
+    .blog-section {
+        padding-top: 140px !important;
     }
 }

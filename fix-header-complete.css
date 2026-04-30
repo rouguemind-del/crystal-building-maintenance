@@ -1,0 +1,68 @@
+/* COMPLETE FIX for header overlap issue */
+/* The header appears transparent initially but is always covering content */
+
+/* Main hero sections - increase padding significantly */
+.hero {
+    padding-top: 160px !important; /* Increased to ensure content is below header */
+    padding-bottom: 4rem;
+}
+
+/* Service page heroes */
+.hero-service-page {
+    padding-top: 160px !important;
+}
+
+/* Any section that might be at the top of a page */
+section:first-child {
+    padding-top: 160px !important;
+}
+
+/* Global body padding as fallback */
+body {
+    padding-top: 140px !important;
+}
+
+/* Page content wrapper if it exists */
+.page-content,
+.main-content,
+main {
+    padding-top: 140px !important;
+}
+
+/* Specific service page adjustments */
+.service-hero {
+    padding-top: 160px !important;
+}
+
+/* About, Contact, Blog pages */
+.about-hero,
+.contact-section,
+.blog-section {
+    padding-top: 160px !important;
+}
+
+/* Mobile adjustments - header is usually shorter on mobile */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 140px !important;
+    }
+    
+    .hero-service-page {
+        padding-top: 140px !important;
+    }
+    
+    body {
+        padding-top: 120px !important;
+    }
+    
+    section:first-child {
+        padding-top: 140px !important;
+    }
+    
+    .service-hero,
+    .about-hero,
+    .contact-section,
+    .blog-section {
+        padding-top: 140px !important;
+    }
+}
