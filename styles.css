@@ -684,15 +684,13 @@ section {
     color: var(--gray-600);
 }
 
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: var(--spacing-xl);
-    max-width: 900px;
+.video-grid {1max-width: 1200px;
     margin: 0 auto;
 }
 
-.video-container {
+1
+    max-width: 400px;
+    margin: 0 auto;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
@@ -709,6 +707,26 @@ section {
     transform: translateY(-4px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
+/* Videos Grid - 3 column layout */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem auto;
+    max-width: 1200px;
+}
+
+.videos-grid .video-container {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 
 .video-container iframe {
     position: absolute;
@@ -1199,7 +1217,9 @@ section {
         gap: var(--spacing-md);
     }
     
-    .video-container {
+    1
+    max-width: 400px;
+    margin: 0 auto;
         min-height: 250px;
     }
     
