@@ -684,11 +684,12 @@ section {
     color: var(--gray-600);
 }
 
-.video-grid {1max-width: 1200px;
+.video-grid {
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-1
+.video-container {
     max-width: 400px;
     margin: 0 auto;
     position: relative;
